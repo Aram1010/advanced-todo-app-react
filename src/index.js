@@ -6,13 +6,17 @@ import "./index.css";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
+import { AppContext } from "./context/Context";
+
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <AppContext.Provider value="">
+      <Router>
+        <App />
+      </Router>
+    </AppContext.Provider>
   </React.StrictMode>
 );

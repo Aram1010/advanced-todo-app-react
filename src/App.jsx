@@ -1,12 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Login } from "./container/index";
+
+import { Login, Main } from "./container/index";
 
 const App = () => {
   return (
     <div>
       <Routes>
-        <Route to="/" element={<Login />}></Route>
+        <Route path="/" element={<Login />} />
+        <Route path="/tasks" element={<Main />} />
       </Routes>
     </div>
   );
