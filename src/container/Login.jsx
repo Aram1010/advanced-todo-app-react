@@ -1,23 +1,14 @@
 import React from "react";
 
-import firebase from "firebase/compat/app";
-import { auth } from "../firebase/firebase";
+import signinimg from "../assets/signinimg.jpg";
+
+import AuthButtons from "../components/login/AuthButtons";
 
 const Login = () => {
-
-  const googleAuthentication = () => {
-    auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
-  }
-
   return (
-    <div>
-      <button
-        onClick={() => {
-          googleAuthentication()
-        }}
-      >
-        Sign in
-      </button>
+    <div className="flex lg:flex-row max-lg:flex-col max-lg:h-[75vh] items-center justify-around m-[5px] relative -z-1">
+      <img src={signinimg} className="lg:max-w-[600px] max-lg:max-w-[550px] max-sm:w-[100%]" alt="" />
+      <AuthButtons />
     </div>
   );
 };
