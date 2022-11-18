@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
 
-import signinimg from "../assets/signinimg.jpg";
-import logo from "../assets/logo.png";
+import signinimg from "../../assets/signinimg.jpg";
+import logo from "../../assets/logo.png";
 
-import AuthButtons from "../components/login/AuthButtons";
+import AuthButtons from "../AuthButtons";
 
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase/firebase";
+import { auth } from "../../firebase/firebase";
 
 const Login = () => {
-
   const navigate = useNavigate();
 
   useEffect(() => {

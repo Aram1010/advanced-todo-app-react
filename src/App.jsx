@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { Login, Home } from "./container/index";
+import { Login, Home } from "./components/layout/index";
 
 const App = () => {
   return (
-    <div className="">
+    <div className="App">
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/tasks" element={<Home />} />
