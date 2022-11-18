@@ -6,7 +6,8 @@ import "./index.css";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { AppProvider } from "./context/Context";
+import { AppProvider } from "./context/context";
+import { ProjectsProvider , SelectedProjectProvider } from "./context";
 
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
@@ -15,7 +16,11 @@ root.render(
   <React.StrictMode>
     <Router>
       <AppProvider>
-        <App />
+        <SelectedProjectProvider>
+          <ProjectsProvider>
+            <App />
+          </ProjectsProvider>
+        </SelectedProjectProvider>
       </AppProvider>
     </Router>
   </React.StrictMode>
