@@ -11,7 +11,7 @@ const AuthButtons = () => {
   const anonymousAuthentication = () => {
     auth.signInAnonymously(auth);
   };
-  
+
   return (
     <div className="flex flex-col text-[#ffff] min-w-[300px]">
       <button

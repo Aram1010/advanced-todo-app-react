@@ -1,18 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/header/Navbar";
-import { Login, Main } from "./container/index";
+import { Login, Home } from "./container/index";
 
 const App = () => {
   return (
     <div className="">
-      <div className="">
-        <Navbar />
-      </div>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/tasks" element={<Main />} />
+        <Route path="/tasks" element={<Home />} />
       </Routes>
     </div>
   );

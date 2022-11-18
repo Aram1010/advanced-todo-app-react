@@ -1,11 +1,8 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
-
+import React, { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { auth } from "../firebase/firebase";
 
 const AppContext = createContext();
-export const AppLayerContext = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -14,11 +11,14 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      setUser(user._delegate);
+      setUser(user);
       if (user) navigate("/tasks");
     });
-  }, [user]);
+  }, [user, navigate]);
 
   const value = { user };
+
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
+
+export const AppLayerContext = () => useContext(AppContext);
