@@ -13,7 +13,7 @@ const Tasks = () => {
       <h2>Tasks</h2>
       {tasks &&
         tasks?.map((task) => (
-          <li data-Id-key={task.docId} key={task.docId}>
+          <li data-id-key={task.docId} key={task.docId}>
             {task.task}
           </li>
         ))}
