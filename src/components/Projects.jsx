@@ -4,7 +4,7 @@ import Project from "./Project";
 
 const Projects = ({ activeValue = null }) => {
   const [active, setActive] = useState(activeValue);
-  const { selectedProject, setSelectedProject } = useSelectedProjectValue();
+  const { setSelectedProject } = useSelectedProjectValue();
   const { projects } = useProjectsValue();
 
   return (
@@ -17,8 +17,11 @@ const Projects = ({ activeValue = null }) => {
           setActive(project.projectId);
           setSelectedProject(project.projectId);
         }}
-        
-        style={active === project.projectId ? {backgroundColor : "#000"} : {backgroundColor : "#ffff"}}
+        style={
+          active === project.projectId
+            ? { backgroundColor: "#F1F1F0" }
+            : { backgroundColor: "#ffff" }
+        }
       >
         <Project project={project} />
       </li>

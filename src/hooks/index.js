@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase/firebase";
-import { collection, getDocs, orderBy } from "firebase/firestore";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 
 export const useProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -13,18 +13,19 @@ export const useProjects = () => {
 
       if (!isRender) {
         const getPr = () => {
-          getDocs(collection(db, "projects"), orderBy("projectId")).then(
-            (snapshot) => {
-              const allProjects = snapshot.docs.map((project) => ({
-                ...project.data(),
-                docId: project.id,
-              }));
+          const q = query(collection(db, "projects"), orderBy("projectId"));
+          const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            const projects_ = [];
+            querySnapshot.forEach((doc) => {
+              projects_.push({
+                name: doc.data().name,
+                projectId: doc.data().projectId,
+                docId: doc.id,
+              });
 
-              if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
-                setProjects(allProjects);
-              }
-            }
-          );
+              setProjects(projects_);
+            });
+          });
         };
         getPr();
       }

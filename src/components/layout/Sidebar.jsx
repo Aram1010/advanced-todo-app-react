@@ -5,6 +5,7 @@ import { auth } from "../../firebase/firebase";
 
 import Projects from "../Projects";
 import { useSelectedProjectValue } from "../../context";
+import AddProjects from "../AddProjects";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ const Sidebar = () => {
   return (
     <div>
       <Projects />
+      <AddProjects />
       <button type="button" onClick={() => signOut()}>
         Sign out
       </button>
