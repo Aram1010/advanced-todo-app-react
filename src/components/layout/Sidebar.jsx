@@ -8,6 +8,7 @@ import { useSelectedProjectValue } from "../../context";
 import AddProjects from "../AddProjects";
 
 const Sidebar = () => {
+  const { setSelectedProject } = useSelectedProjectValue();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,8 +34,10 @@ const Sidebar = () => {
 
     navigate("/");
   };
+
   return (
     <div>
+      <div className="" onClick={() => setSelectedProject("Inbox")}>Inbox</div>
       <Projects />
       <AddProjects />
       <button type="button" onClick={() => signOut()}>

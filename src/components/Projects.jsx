@@ -12,7 +12,7 @@ const Projects = ({ activeValue = null }) => {
     projects?.map((project) => (
       <li
         key={project.projectId}
-        data-doc-id={project.docId}
+        data-id={project.projectId}
         onClick={() => {
           setActive(project.projectId);
           setSelectedProject(project.projectId);
