@@ -1,17 +1,12 @@
 import React from "react";
 
-// import {AppLayerContext} from "../context/Context"
-
-import {Sidebar , Content} from ".."
-
+import { Sidebar, Tasks } from "..";
 
 const Home = () => {
-  // const {user} = AppLayerContext()
-
   return (
     <div className="flex">
       <Sidebar />
-      <Content />
+      <Tasks />
     </div>
   );
 };

@@ -1,2 +1,2 @@
-export {default as Content} from "./layout/Content"
+export {default as Tasks} from "./layout/Tasks"
 export {default as Sidebar} from "./layout/Sidebar"
