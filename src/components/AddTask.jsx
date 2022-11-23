@@ -21,6 +21,7 @@ const AddTask = () => {
         projectId: selectedProject,
         docId: small_id,
         date: "",
+        isCompleted: false,
       }).then(() => {
         setTaskName("");
       });
