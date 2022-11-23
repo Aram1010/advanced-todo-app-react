@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { useSelectedProjectValue, useProjectsValue } from "../context";
 import Project from "./Project";
 
-const Projects = ({ activeValue = null }) => {
-  const [active, setActive] = useState(activeValue);
-  const { setSelectedProject } = useSelectedProjectValue();
+const Projects = () => {
+  const { selectedProject, setSelectedProject } = useSelectedProjectValue();
   const { projects } = useProjectsValue();
 
   return (
@@ -14,14 +13,14 @@ const Projects = ({ activeValue = null }) => {
         key={project.projectId}
         data-id={project.projectId}
         onClick={() => {
-          setActive(project.projectId);
           setSelectedProject(project.projectId);
         }}
         style={
-          active === project.projectId
-            ? { backgroundColor: "#F1F1F0" }
-            : { backgroundColor: "#ffff" }
+          selectedProject === project.projectId
+            ? { backgroundColor: "#F1F1F0", color: "#46ABEF" }
+            : null
         }
+        className="list-none rounded-[6px] cursor-pointer my-[4px] bg-[#ffff] hover:bg-[#F8F8F7]"
       >
         <Project project={project} />
       </li>
