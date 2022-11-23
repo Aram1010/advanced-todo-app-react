@@ -26,16 +26,26 @@ const AddProjects = () => {
     }
   };
 
+  const limitProjectName = (e) => {
+    const max_chars = 10;
+
+    if(e.value.length > max_chars) {
+      e.value = e.value.slice(0, 10);
+    }
+  }
+
   return (
     <div className="my-[20px]" onSubmit={addProject}>
       <form action="" className="flex items-center">
-        <button type="submit" onClick={() => addProject()}>
+        <button type="submit" onClick={(e) => addProject(e)}>
           <CgAddR className="text-[20px]" />
         </button>
         <input
           type="text"
           value={projectName}
           onChange={(e) => setProjectName(e.target.value)}
+          onKeyDown={(e) => limitProjectName(e.target)}
+          onKeyUp={(e) => limitProjectName(e.target)}
           placeholder="Create new project"
           className="outline-none ml-[10px]"
         />
