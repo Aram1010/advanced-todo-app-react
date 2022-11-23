@@ -13,11 +13,11 @@ const Tasks = () => {
 
   const deleteTask = (taskId) => {
     const docRef = doc(db, "tasks", taskId);
-    deleteDoc(docRef)
-  }
+    deleteDoc(docRef);
+  };
 
   return (
-    <div>
+    <div className="flex-[0.7] bg-[#FBFBFA]">
       <h2>Tasks</h2>
       {tasks &&
         tasks?.map((task) => (
@@ -41,7 +41,9 @@ const Tasks = () => {
             >
               {task.task}
             </span>
-            <button className="ml-[20px]" onClick={() => deleteTask(task.id)}>delete task</button>
+            <button className="ml-[20px]" onClick={() => deleteTask(task.id)}>
+              delete task
+            </button>
           </li>
         ))}
       <AddTask />
