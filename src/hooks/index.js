@@ -67,6 +67,24 @@ export const useTasks = (selectedProject) => {
               setTasks(tasks_);
             });
           });
+        }
+        else if (selectedProject === "Completed") {
+          setTasks("");
+          onSnapshot(q, (querySnapshot) => {
+            const tasks_ = [];
+            querySnapshot.forEach((doc) => {
+              tasks_.push({
+                task: doc.data().task,
+                projectId: doc.data().projectId,
+                id: doc.id,
+                isCompleted: doc.data().isCompleted,
+              });
+              const specificTasks = tasks_.filter(
+                (tas) => tas.isCompleted === true
+              );
+              setTasks(specificTasks);
+            });
+          });
         } else {
           setTasks("");
           onSnapshot(q, (querySnapshot) => {
