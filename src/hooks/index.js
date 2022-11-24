@@ -20,6 +20,7 @@ export const useProjects = () => {
               projects_.push({
                 name: doc.data().name,
                 projectId: doc.data().projectId,
+                color: doc.data().color,
                 docId: doc.id,
               });
 

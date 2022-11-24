@@ -21,20 +21,18 @@ const Modal = ({ openModal, setOpenModal, project }) => {
 
   return (
     <div
-      className="absolute z-10 top-[1rem] right-[0] p-[15px] w-[200px] bg-[rgba(255,255,255,.2)] backdrop-blur-[5px] 
+      className="absolute z-10 top-[-3rem] right-[0] p-[15px] w-[200px] bg-[rgba(255,255,255,.2)] backdrop-blur-[5px] 
         rounded-[10px] shadow-[rgba(149,157,165,0.2)_0px_8px_24px] text-[#02002E]"
     >
       <button
         type="button"
         className="flex items-center mb-[10px]"
-        onClick={() => deleteProject(project.docId)}
       >
         <FiEdit2 /> <span className="pl-[5px]">Edit</span>
       </button>
       <button
         type="button"
         className="flex items-center mb-[10px]"
-        onClick={() => deleteProject(project.docId)}
       >
         <AiOutlineStar /> <span className="pl-[5px]">Favorite</span>
       </button>

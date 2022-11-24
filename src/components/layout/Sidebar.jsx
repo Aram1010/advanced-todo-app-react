@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { auth } from "../../firebase/firebase";
 
-import Projects from "../Projects";
+import Projects from "../layout/Projects";
 import AddProjects from "../AddProjects";
 
 import { FiLogOut } from "react-icons/fi";
@@ -51,7 +51,7 @@ const Sidebar = () => {
           <button
             type="button"
             onClick={() => logOut()}
-            className="absolute bottom-[1rem] flex items-center"
+            className="absolute bottom-[1rem] flex items-center p-[10px]"
           >
             <FiLogOut />
             <span className="ml-[10px]">Log out</span>

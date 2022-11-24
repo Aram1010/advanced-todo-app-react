@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { HiDotsVertical } from "react-icons/hi";
 
@@ -9,8 +9,8 @@ const Project = ({ project }) => {
 
   return (
     <div className="group relative flex p-[10px] items-center">
-      <div className="flex-[0.5]">
-        <span className="">•</span>
+      <div className="flex-[0.5] flex items-center">
+        <span style={{color: project.color , fontSize: "20px"}}>•</span>
         <span className="pl-[5px]">{project.name}</span>
       </div>
       <div className="flex-[0.5] text-right text-[#02002E]">

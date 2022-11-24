@@ -17,7 +17,7 @@ const Tasks = () => {
   };
 
   return (
-    <div className="flex-[0.7] bg-[#FBFBFA]">
+    <div className="flex-[0.7] bg-[#FBFBFA] p-[10px]">
       <h2>Tasks</h2>
       {tasks &&
         tasks?.map((task) => (

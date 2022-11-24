@@ -5,7 +5,26 @@ import { db } from "../firebase/firebase";
 
 import { v4 as uuid } from "uuid";
 
-import { CgAddR } from "react-icons/cg";
+import {AiOutlinePlus } from "react-icons/ai";
+
+const colors = [
+  "aqua",
+  "black",
+  "blue",
+  "fuchsia",
+  "gray",
+  "green",
+  "lime",
+  "maroon",
+  "navy",
+  "olive",
+  "orange",
+  "purple",
+  "red",
+  "silver",
+  "teal",
+  "yellow",
+];
 
 const AddProjects = () => {
   const [projectName, setProjectName] = useState("");
@@ -14,12 +33,13 @@ const AddProjects = () => {
   const small_id = unique_id.slice(0, 8);
 
   const addProject = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (projectName) {
       const docRef = collection(db, "projects");
       addDoc(docRef, {
         name: projectName,
         projectId: small_id,
+        color: randomColor(),
       }).then(() => {
         setProjectName("");
       });
@@ -29,16 +49,21 @@ const AddProjects = () => {
   const limitProjectName = (e) => {
     const max_chars = 10;
 
-    if(e.value.length > max_chars) {
+    if (e.value.length > max_chars) {
       e.value = e.value.slice(0, 10);
     }
-  }
+  };
+
+  const randomColor = () => {
+    let color = Math.floor(Math.random() * colors.length);
+    return colors[color];
+  };
 
   return (
-    <div className="my-[20px]" onSubmit={addProject}>
+    <div className="my-[20px] p-[10px]" onSubmit={addProject}>
       <form action="" className="flex items-center">
         <button type="submit" onClick={(e) => addProject(e)}>
-          <CgAddR className="text-[20px]" />
+          <AiOutlinePlus className="text-[20px]" />
         </button>
         <input
           type="text"
