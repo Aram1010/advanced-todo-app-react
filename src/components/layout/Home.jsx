@@ -1,12 +1,15 @@
 import React from "react";
 
-import { Sidebar, Tasks } from "..";
+import { Sidebar, Tasks, User } from "./";
 
 const Home = () => {
   return (
     <div className="flex">
       <Sidebar />
-      <Tasks />
+      <div className="flex flex-col flex-[0.7] bg-[#FBFBFA] ">
+        <User />
+        <Tasks />
+      </div>
     </div>
   );
 };

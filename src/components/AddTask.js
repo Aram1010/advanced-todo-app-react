@@ -30,17 +30,19 @@ const AddTask = () => {
 
   return (
     <div>
-      <form action="">
-        <input
-          type="text"
-          value={taskName}
-          onChange={(e) => setTaskName(e.target.value)}
-          placeholder="Task name"
-        />
-        <button type="button" onClick={() => addTask()}>
-          Add Task
-        </button>
-      </form>
+      {selectedProject !== "Completed" && (
+        <form action="">
+          <input
+            type="text"
+            value={taskName}
+            onChange={(e) => setTaskName(e.target.value)}
+            placeholder="Task name"
+          />
+          <button type="button" onClick={() => addTask()}>
+            Add Task
+          </button>
+        </form>
+      )}
     </div>
   );
 };

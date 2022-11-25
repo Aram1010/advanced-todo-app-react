@@ -21,7 +21,7 @@ const Modal = ({ openModal, setOpenModal, project }) => {
 
   return (
     <div
-      className="absolute z-10 top-[-3rem] right-[0] p-[15px] w-[200px] bg-[rgba(255,255,255,.2)] backdrop-blur-[5px] 
+      className="absolute z-50 top-[2rem] right-[-5rem] p-[15px] w-[200px] bg-[rgba(255,255,255,.2)] backdrop-blur-[5px] 
         rounded-[10px] shadow-[rgba(149,157,165,0.2)_0px_8px_24px] text-[#02002E]"
     >
       <button
