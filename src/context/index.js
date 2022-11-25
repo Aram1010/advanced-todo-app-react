@@ -10,6 +10,8 @@ import {
   useSelectedProjectValue,
 } from "./selected-project-context";
 
+import { AppLayerContext } from "./context";
+
 export {
   ProjectsContext,
   ProjectsProvider,
@@ -17,4 +19,5 @@ export {
   SelectedProjectContext,
   SelectedProjectProvider,
   useSelectedProjectValue,
+  AppLayerContext,
 };
