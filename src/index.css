@@ -16,3 +16,8 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
 }
+
+[contentEditable=true]:empty:before{
+  content:attr(data-placeholder);
+  color:grey;
+}

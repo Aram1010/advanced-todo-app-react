@@ -1,47 +1,39 @@
-import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
 
-import { v4 as uuid } from "uuid";
+import { AiOutlinePlus } from "react-icons/ai";
 
 import { useSelectedProjectValue } from "../context";
-import { db } from "../firebase/firebase";
+import AddTaskModal from "./AddTaskModal";
 
-const AddTask = () => {
-  const [taskName, setTaskName] = useState("");
+const AddTask = ({ selectedTaskName }) => {
+  const [openModal, setOpenModal] = useState(false);
   const { selectedProject } = useSelectedProjectValue();
 
-  const unique_id = uuid();
-  const small_id = unique_id.slice(0, 8);
-
-  const addTask = () => {
-    if (taskName) {
-      const docRef = collection(db, "tasks");
-      addDoc(docRef, {
-        task: taskName,
-        projectId: selectedProject,
-        docId: small_id,
-        date: "",
-        isCompleted: false,
-      }).then(() => {
-        setTaskName("");
-      });
-    }
-  };
-
   return (
-    <div>
+    <div className="xl:w-[800px] max-xl:w-[100%]">
       {selectedProject !== "Completed" && (
-        <form action="">
-          <input
-            type="text"
-            value={taskName}
-            onChange={(e) => setTaskName(e.target.value)}
-            placeholder="Task name"
-          />
-          <button type="button" onClick={() => addTask()}>
-            Add Task
-          </button>
-        </form>
+        <div className="">
+          {!openModal && (
+            <button
+              type="button"
+              className="group flex items-center hover:text-[#46ABEF]"
+              onClick={() => setOpenModal(!openModal)}
+            >
+              <AiOutlinePlus className="text-[20px]" />{" "}
+              <span className="text-[#B2AEC2] pl-[10px] group-hover:text-[#46ABEF]">
+                Add task
+              </span>
+            </button>
+          )}
+          {openModal && (
+            <AddTaskModal
+              selectedProject={selectedProject}
+              selectedTaskName={selectedTaskName}
+              openModal={openModal}
+              setOpenModal={setOpenModal}
+            />
+          )}
+        </div>
       )}
     </div>
   );
