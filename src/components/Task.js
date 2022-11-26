@@ -13,7 +13,7 @@ const Task = ({ task }) => {
     <li
       data-id-key={task.id}
       key={task.id}
-      className="flex items-center my-[10px]"
+      className="flex items-center my-[10px] bg-[#fff] p-[10px] rounded-[10px]"
     >
       <Checkbox
         taskId={task.id}
@@ -26,11 +26,11 @@ const Task = ({ task }) => {
             ? { textDecoration: "line-through", color: "#AEAEAE" }
             : null
         }
-        className="ml-[10px]"
+        className="px-[5px] pl-[8px] break-all"
       >
         {task.task}
       </span>
-      <button className="ml-[20px]" onClick={() => deleteTask(task.id)}>
+      <button className="min-w-fit" onClick={() => deleteTask(task.id)}>
         delete task
       </button>
     </li>
