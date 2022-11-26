@@ -10,7 +10,7 @@ const Project = ({ project }) => {
   return (
     <div className="group relative flex p-[10px] items-center">
       <div className="flex-[0.5] flex items-center">
-        <span style={{color: project.color , fontSize: "20px"}}>•</span>
+        <span style={{ color: project.color, fontSize: "20px" }}>•</span>
         <span className="pl-[5px]">{project.name}</span>
       </div>
       <div className="flex-[0.5] text-right text-[#02002E]">
