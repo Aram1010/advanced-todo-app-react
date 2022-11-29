@@ -39,7 +39,7 @@ const AddTaskModal = ({
           selectedTaskName[0] ? selectedTaskName[0].name : selectedProject
         }"`}
         contentEditable="true"
-        spellcheck="true"
+        spellCheck="true"
         className="outline-none break-all cursor-text border-2 border-solid border-[#e5e5e5] rounded-[10px] p-[10px]"
         onInput={(e) => setTaskName(e.currentTarget.textContent)}
         onKeyDown={(e) => {

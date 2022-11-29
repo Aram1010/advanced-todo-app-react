@@ -10,8 +10,6 @@ const User = () => {
     if (user) setUser_(user._delegate.providerData[0]);
   }, [user]);
 
-  console.log(user_ && user_.photoURL);
-
   return (
     <div className="p-[10px]">
       {user_ && (

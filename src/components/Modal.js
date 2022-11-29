@@ -9,7 +9,7 @@ import { FiEdit2 } from "react-icons/fi";
 import { AiOutlineStar, AiOutlineDelete } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
 
-const Modal = ({ openModal, setOpenModal, project }) => {
+const Modal = ({ openModal, setOpenModal, project, setIsEdit, isEdit }) => {
   const { setSelectedProject } = useSelectedProjectValue();
 
   const deleteProject = (docId) => {
@@ -25,7 +25,10 @@ const Modal = ({ openModal, setOpenModal, project }) => {
         rounded-[4px] shadow-[rgba(149,157,165,0.2)_0px_8px_24px] text-[#02002E]"
     >
       <button type="button" className="flex items-center mb-[10px]">
-        <FiEdit2 /> <span className="pl-[5px]">Edit</span>
+        <FiEdit2 />{" "}
+        <span className="pl-[5px]" onClick={() => setIsEdit(!isEdit)}>
+          Edit
+        </span>
       </button>
       <button type="button" className="flex items-center mb-[10px]">
         <AiOutlineStar /> <span className="pl-[5px]">Favorite</span>
