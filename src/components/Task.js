@@ -20,9 +20,9 @@ const Task = ({ task }) => {
     const docRef = doc(db, "tasks", task.id);
     updateDoc(docRef, {
       task: taskName,
-    })
-    setIsEdit(!isEdit)
-  }
+    });
+    setIsEdit(!isEdit);
+  };
 
   return (
     <li
@@ -42,36 +42,50 @@ const Task = ({ task }) => {
           />
         )}
         <div className="flex flex-col flex-1">
-          <span
-            style={Object.assign(
-              {
-                ...(task.isCompleted
+          {!isEdit && (
+            <span
+              style={
+                task.isCompleted
                   ? { textDecoration: "line-through", color: "#AEAEAE" }
-                  : null),
-              },
-              {
-                ...(isEdit
-                  ? {
-                      padding: "20px",
-                      border: "1px solid #F0F0F0",
-                      width: "100%",
-                      borderRadius: "8px",
-                      outline: "none",
-                    }
-                  : null),
+                  : null
               }
-            )}
-            id="text"
-            className="px-[5px] pl-[8px] break-word"
-            contentEditable={isEdit}
-            onInput={(e) => setTaskName(e.currentTarget.textContent)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") changeTask();
-            }}
-            suppressContentEditableWarning={true}
-          >
-            {task.task}
-          </span>
+              className="px-[5px] pl-[8px] break-word"
+            >
+              {task.task}
+            </span>
+          )}
+          {isEdit && (
+            <span
+              style={Object.assign(
+                {
+                  ...(task.isCompleted
+                    ? { textDecoration: "line-through", color: "#AEAEAE" }
+                    : null),
+                },
+                {
+                  ...(isEdit
+                    ? {
+                        padding: "20px",
+                        border: "1px solid #F0F0F0",
+                        width: "100%",
+                        borderRadius: "8px",
+                        outline: "none",
+                      }
+                    : null),
+                }
+              )}
+              id="text"
+              className="px-[5px] pl-[8px] break-word"
+              contentEditable={isEdit}
+              onInput={(e) => setTaskName(e.currentTarget.textContent)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") changeTask();
+              }}
+              suppressContentEditableWarning={true}
+            >
+              {task.task}
+            </span>
+          )}
           {isEdit && (
             <div className="p-[5px] flex justify-end">
               <button

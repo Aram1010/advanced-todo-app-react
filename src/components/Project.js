@@ -31,7 +31,8 @@ const Project = ({ project }) => {
           style={isEdit ? { flex: "1" } : null}
         >
           <span style={{ color: project.color, fontSize: "20px" }}>•</span>
-          <div className="flex flex-col flex-1">
+          {!isEdit && <span className="pl-[5px]">{project.name}</span>}
+          {isEdit && (
             <span
               className="pl-[5px] outline-none"
               style={isEdit ? { cursor: "text", color: "#000" } : null}
@@ -50,7 +51,7 @@ const Project = ({ project }) => {
             >
               {project.name}
             </span>
-          </div>
+          )}
         </div>
         {isEdit && (
           <div className="p-[5px] flex justify-end">
