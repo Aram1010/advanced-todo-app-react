@@ -40,20 +40,23 @@ const AddTaskModal = ({
         }"`}
         contentEditable="true"
         spellcheck="true"
-        className="outline-none break-words whitespace-pre-wrap overflow-wrap break-word cursor-text border-2 border-solid border-[#e5e5e5] rounded-[10px] p-[10px]"
+        className="outline-none break-all cursor-text border-2 border-solid border-[#e5e5e5] rounded-[10px] p-[10px]"
         onInput={(e) => setTaskName(e.currentTarget.textContent)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") addTask();
+        }}
       ></div>
       <div className="flex justify-end mt-[10px]">
         <button
           type="button"
-          className="p-[5px] rounded-[4px] bg-[#F5F5F5] text-[14px] text-[#000] mr-[10px]"
+          className="p-[5px] rounded-[4px] bg-[#F5F5F5] text-[14px] text-[#000] mr-[10px] hover:bg-[#c4c4c4]"
           onClick={() => setOpenModal(!openModal)}
         >
           Cancel
         </button>
         <button
           type="button"
-          className="p-[5px] rounded-[4px] bg-[#46ABEF] text-[14px] text-[#ffff]"
+          className="p-[5px] rounded-[4px] bg-[#46ABEF] text-[14px] text-[#ffff] hover:bg-[#1490e4]"
           onClick={() => addTask()}
         >
           Add Task

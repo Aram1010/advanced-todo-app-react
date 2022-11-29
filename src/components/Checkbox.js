@@ -18,7 +18,7 @@ const Checkbox = ({ taskId, taskIsCompleted }) => {
       className="rounded-[50px] w-[15px] min-w-[15px] cursor-pointer h-[15px] 
       shadow-[rgba(0,0,0,0.02)_0px_1px_3px_0px,rgba(27,31,35,0.15)_0px_0px_0px_1px]"
     >
-        {taskIsCompleted && <FaRegCheckCircle style={{ color: "#ffff"}}/>}
+      {taskIsCompleted && <FaRegCheckCircle style={{ color: "#ffff" }} />}
     </div>
   );
 };

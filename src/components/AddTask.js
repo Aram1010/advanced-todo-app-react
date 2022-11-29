@@ -10,7 +10,7 @@ const AddTask = ({ selectedTaskName }) => {
   const { selectedProject } = useSelectedProjectValue();
 
   return (
-    <div className="xl:w-[800px] max-xl:w-[100%]">
+    <div className="xl:w-[800px] max-xl:w-[100%] pt-[5px]">
       {selectedProject !== "Completed" && (
         <div className="">
           {!openModal && (

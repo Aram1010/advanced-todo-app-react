@@ -22,18 +22,12 @@ const Modal = ({ openModal, setOpenModal, project }) => {
   return (
     <div
       className="absolute z-50 top-[2rem] right-[-5rem] p-[15px] w-[200px] bg-[rgba(255,255,255,.2)] backdrop-blur-[5px] 
-        rounded-[10px] shadow-[rgba(149,157,165,0.2)_0px_8px_24px] text-[#02002E]"
+        rounded-[4px] shadow-[rgba(149,157,165,0.2)_0px_8px_24px] text-[#02002E]"
     >
-      <button
-        type="button"
-        className="flex items-center mb-[10px]"
-      >
+      <button type="button" className="flex items-center mb-[10px]">
         <FiEdit2 /> <span className="pl-[5px]">Edit</span>
       </button>
-      <button
-        type="button"
-        className="flex items-center mb-[10px]"
-      >
+      <button type="button" className="flex items-center mb-[10px]">
         <AiOutlineStar /> <span className="pl-[5px]">Favorite</span>
       </button>
       <button
