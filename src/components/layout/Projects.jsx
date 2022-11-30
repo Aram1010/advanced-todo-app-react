@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelectedProjectValue, useProjectsValue } from "../../context";
 import Project from "../projects/Project";
 

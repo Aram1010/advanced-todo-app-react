@@ -6,7 +6,6 @@ const User = () => {
 
   const [user_, setUser_] = useState(null);
 
-  
   useEffect(() => {
     if (user) setUser_(user._delegate.providerData[0]);
   }, [user]);
