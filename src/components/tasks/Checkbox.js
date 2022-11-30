@@ -1,6 +1,6 @@
 import { doc, updateDoc } from "firebase/firestore";
 import React from "react";
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 import { FaRegCheckCircle } from "react-icons/fa";
 
 const Checkbox = ({ taskId, taskIsCompleted }) => {

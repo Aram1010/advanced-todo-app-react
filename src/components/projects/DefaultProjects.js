@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useSelectedProjectValue } from "../context";
+import { useSelectedProjectValue } from "../../context";
 
 import { FaInbox, FaCheck } from "react-icons/fa";
 

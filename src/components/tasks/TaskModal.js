@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { deleteDoc, doc } from "firebase/firestore";
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 
 import { FiEdit2 } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";

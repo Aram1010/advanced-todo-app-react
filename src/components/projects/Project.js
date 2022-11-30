@@ -2,7 +2,7 @@ import { doc, updateDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 
 import { HiDotsVertical } from "react-icons/hi";
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 
 import Modal from "./Modal";
 

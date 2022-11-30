@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { AiOutlinePlus } from "react-icons/ai";
 
-import { useSelectedProjectValue } from "../context";
+import { useSelectedProjectValue } from "../../context";
 import AddTaskModal from "./AddTaskModal";
 
 const AddTask = ({ selectedTaskName }) => {

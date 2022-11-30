@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 
 import { v4 as uuid } from "uuid";
 

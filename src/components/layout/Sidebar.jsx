@@ -1,10 +1,10 @@
 import React from "react";
 
 import Projects from "../layout/Projects";
-import AddProjects from "../AddProjects";
+import AddProjects from "../projects/AddProjects";
 
 import logo from "../../assets/logo.png";
-import DefaultProjects from "../DefaultProjects";
+import DefaultProjects from "../projects/DefaultProjects";
 import Logout from "../Logout";
 
 const Sidebar = () => {

@@ -1,9 +1,9 @@
 import React from "react";
 
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 import { deleteDoc, doc } from "firebase/firestore";
 
-import { useSelectedProjectValue } from "../context";
+import { useSelectedProjectValue } from "../../context";
 
 import { FiEdit2 } from "react-icons/fi";
 import { AiOutlineStar, AiOutlineDelete } from "react-icons/ai";

@@ -5,7 +5,7 @@ import TaskModal from "./TaskModal";
 
 import { BsThreeDots } from "react-icons/bs";
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 
 const Task = ({ task }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -28,7 +28,7 @@ const Task = ({ task }) => {
     <li
       data-id-key={task.id}
       key={task.id}
-      className="group flex items-center justify-between my-[10px] p-[10px] rounded-[10px] border-b-2 border-[#F0F0F0] relative"
+      className="group flex items-center justify-between my-[10px] p-[10px] rounded-[2px] border-b-2 border-[#F0F0F0] relative"
       style={
         isEdit ? { margin: "40px 0px", border: "none", display: "block" } : null
       }

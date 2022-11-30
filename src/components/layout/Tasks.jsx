@@ -2,8 +2,8 @@ import React from "react";
 
 import { useTasks } from "../../hooks/index";
 import { useSelectedProjectValue, useProjectsValue } from "../../context";
-import AddTask from "../AddTask";
-import Task from "../Task";
+import AddTask from "../tasks/AddTask";
+import Task from "../tasks/Task";
 
 const Tasks = () => {
   const { selectedProject } = useSelectedProjectValue();
